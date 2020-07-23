@@ -1,55 +1,30 @@
 import request from '../../utils/request'
-// pages/home/index.js
+// pages/course/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // 轮播图数据
-    swiperList: [],
-    // 推荐课程
+    // 课程列表
     courseList: [],
-    // 热门视频
-    videoList: []
+    // 级别
+    levelText: ['初级', '中级', '高级']
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: async function (options) {
-    this.getSwiperData()
-    this.getCourseData()
-    this.getVideoData()
+  onLoad: function (options) {
+    this.getCourseList()
   },
 
-  // 轮播图数据
-  async getSwiperData(){
+  async getCourseList(){
     let res = await request({
-      url: '/api/home/swipers',
-    })
-    this.setData({
-      swiperList: res.message
-    })
-  },
-
-  // 推荐课程数据
-  async getCourseData(){
-    let res = await request({
-      url: '/api/home/course',
+      url: '/api/course/list'
     })
     this.setData({
       courseList: res.message
-    })
-  },
-
-  // 热门视频数据
-  async getVideoData(){
-    let res = await request({
-      url: '/api/home/video',
-    })
-    this.setData({
-      videoList: res.message
     })
   },
 

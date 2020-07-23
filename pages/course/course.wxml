@@ -1,0 +1,8 @@
+<view class="course-list">
+  <view class="course" wx:for="{{courseList}}" wx:key="id">
+    <image src="{{item.icon}}"></image>
+    <text class="title">{{item.title}}</text>
+    <text class="subtitle">{{item.subtitle}}</text>
+    <text class="level">{{levelText[item.level -1]}}课程</text>
+  </view>
+</view>

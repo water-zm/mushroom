@@ -3,7 +3,9 @@
     "pages/home/home",
     "pages/course/course",
     "pages/study/study",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/login/login",
+    "pages/phone-login/phone-login"
   ],
   "tabBar": {
     "color": "#A8A8A8",

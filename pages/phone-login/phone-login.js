@@ -1,34 +1,11 @@
-import request from '../../utils/request'
-// pages/my/index.js
+// pages/phone-login/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // 个人信息
-    userInfo: {}
-  },
 
-  // 打电话
-  contact(){
-    wx.makePhoneCall({
-      phoneNumber: '10086',
-    })
-  },
-
-  // 个人信息
-  async queryMyInfo(token){
-    let data = await request({
-      url: '/api/my/info',
-      header: {
-        Authorization: token
-      }
-    })
-    console.log(data)
-    this.setData({
-      userInfo: data.message
-    })
   },
 
   /**
@@ -42,14 +19,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    let token = wx.getStorageSync('token')
-    if (!token) {
-      wx.navigateTo({
-        url: '/pages/login/login',
-      })
-      return
-    }
-    this.queryMyInfo(token)
+
   },
 
   /**

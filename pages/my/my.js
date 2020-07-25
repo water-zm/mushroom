@@ -42,6 +42,13 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     let token = wx.getStorageSync('token')
     if (!token) {
       wx.navigateTo({
@@ -50,13 +57,6 @@ Page({
       return
     }
     this.queryMyInfo(token)
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
   },
 
   /**
